@@ -9,27 +9,44 @@
 		margin: auto;
 		text-align: center;
 		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		vertical-align: top;
 	}
 	h1 {
 		color:rgb(2, 128, 111);
-		font-size: 24px;
+		font-size: 28px;
 		margin-top: 0;
 	}
-	img {
-		transform: scale(0.7);
-		margin-bottom: 0;
+	h3 {
+		color: #666666;
 	}
 </style>
 </head>
 
 <body>
 <div>
-	<img src="imgs/homework.png" />
+	<img src="imgs/homework.png" class="alberto_draw" />
 	<h1>Web Programming 1 Assignments</h1>
-	<h3>Welcome to my homework :P</h3>
+	<h3>Welcome to my homework :D</h3>
 	<p>Hi guys, my name is Alberto. I am in the third semester of the Ms. Learning Design and Technology program. <br />My background is in Graphic Communication, but I work in IT related fields.</p>
-	<p>I play some guitar and piano and I am a proffesional shower singer. I love drawing and a good cup of coffee or tea.</p>
+	<p>I play some guitar and piano and I am a proffesional shower-singer. I love drawing and a good cup of coffee or tea.</p>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="Scripts/jquery-3-3-1.min.js"><\/script>');</script>
+<script type="text/javascript" src="Scripts/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+$(function() {
+
+    "use strict";
+	var $albPic = $('.alberto_draw');
+
+	$albPic.animate({
+		'top' : '50%'
+		}, 1500, 'easeOutExpo').fadeIn('slow');
+
+});
+</script>
 </body>
 </html>
