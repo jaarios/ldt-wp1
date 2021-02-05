@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Document</title>
+    <style>
+        /* I always reference the colors used in theme at the top
+        wher I can easily copy/paste
+
+        light blue #7bb9bf
+        Dark blue #017783
+        cream color antiquewhite        */
+
+        /* =======================
+        This first block is a fix for 
+        the Box Model. Use it on your 
+        projects to make sur the padding and
+        border are included in the width of 
+        your boxes. Instead of having to keep
+        track of those numbers for the toal width. */
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        /* =========================
+        This small block is a reset that
+        some developers include in their projects.
+        The asterisc is a selector for ALL items.
+        some of them have by default margin and padding
+        that gets on the way of your design.
+        Whith this fix, that is removed and you can
+        start styling from scratch without issues. */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* ==================
+        This last fix is to prevent some containers from
+        collapsing when they have floating elements inside */
+        .clearfix {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* === HEADER BLOCK =====
+        Notice the property "max-width"
+        is used to achieve fluid layout. 
+        
+        The logo is just a div with the property
+        background-image, this allows me to render
+        a different image in mobile views. This practice
+        is usually for ui elements, not for content */ 
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #7bb9bf;
+            position: relative;
+        }
+        #logo {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top:10px;
+            left: 20px;
+            background-image: url("images/logo.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+        }
+        nav {
+            float: right;
+            position: absolute;
+            right: 10%;
+            top: 50%;
+        }
+        nav a {
+            text-decoration: none;
+            padding:10px 20px;
+            margin: 5px;
+            background-color: antiquewhite;
+            color:#017783;
+        }
+        nav a:hover {
+            text-decoration: none;
+            padding:10px 20px;
+            margin: 5px;
+            background-color: #017783;
+            color: antiquewhite;
+        }
+
+        /* ===== Responsive images ======
+        this class forces an HTML image
+        to render at a percentage with an 
+        automatic height. 100% is used and the 
+        image will expand as big as the container
+        wrapping around can allow. That is how you 
+        can control the size.
+
+        in this case I use 50% as I only use it in 
+        the bottom icons as an example */
+        .responsive {
+        max-width: 50%;
+        height: auto;
+        }
+
+        .first-block div div {
+            height: 100%;
+            float: left;
+            text-align: center;
+        }
+        .two-column {
+            max-width: 1200px;
+            overflow: hidden;
+        }
+        .two-small {
+            width: 35%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .two-small h1 {
+            position: relative;
+            margin-top: 30%;
+        }
+        .two-large {
+            width: 65%;
+        }
+        /* this image has the sme fix applied
+        in a separate rule */
+        .two-large img {
+        max-width: 100%;
+        height: auto;
+        }
+        section {
+            max-width: 100%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .section-content-wrap {
+            max-width: 1200px;
+            min-height: 50px;
+            margin: auto;
+        }
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .three-column div {
+            text-align: center;
+            padding: 10px;
+        }
+        .three-column div a img {
+            display: none;
+        }
+        #facebook, #instagram, #twitter {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px;
+            color: #017783;
+        }
+        span{
+            display: inline-block;
+        }
+        #facebook span {
+            padding-top: 70px;
+            background-image: url("images/facebook.jpg");
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 60px;
+        }
+        #instagram span {
+            padding-top: 70px;
+            background-image: url("images/instagram.jpg");
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 60px;
+        }
+        #twitter span {
+            padding:0 10px;
+            padding-top: 70px;
+            background-image: url("images/twitter.jpg");
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 60px;
+        }
+
+
+        footer {
+            width: 100%;
+            min-height: 200px;
+            padding: 20px;
+            padding-top: 100px;
+            background-image: url("images/transition.jpg");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-color: #7bb9bf;
+            text-align: center;
+            color: antiquewhite;
+        }
+
+        /* =================================
+        Responsive query for mobile devices.
+        This block declares a different set of rules
+        for the same elements, but it only applies to
+        screens 700px width or less.
+        
+        You can customize the size and add as many queries 
+        as you need. */
+        @media screen and (max-width:700px){
+        header {
+            height: 200px;
+        }
+        #logo {
+            width: 200px;
+            height: 70px;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: auto;
+            background-image: url("images/logo-small.png");
+            background-size: 100%;
+        }
+        nav {
+            max-width: 300px;
+            float: none;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            margin-left: -100px;
+        }
+        nav a {
+            text-align: center;
+            width: 200px;
+            display: block;
+            padding: 5px;
+        }
+        .three-column div a span {
+            display: none;
+        }
+        .three-column div a img {
+            display: block;
+            margin: auto;
+            width: 30%;
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo"></div>
+        <nav>
+            <a href="#">Portfolio</a>
+            <a href="#">About Me</a>
+            <a href="#">Contact Me</a>
+        </nav>
+        <div class="clearfix">&nbsp;</div>
+    </header>
+
+    <section class="first-block">
+        <div class="section-content-wrap two-column">
+            <div class="two-small"><h1>Responsive Web Design</h1></div>
+            <div class="two-large"><img src="images/responsive-website-design.png" /></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-content-wrap three-column">
+            <div><a id="facebook" href="#"><img class="responsive" src="images/facebook.jpg" />
+            <span>Facebook</span></a></div>
+            <div><a id="instagram" href="#"><img class="responsive" src="images/instagram.jpg" />
+            <span>Instagram</span></a></div>
+            <div><a id="twitter" href="#"><img class="responsive" src="images/twitter.jpg" />
+            <span>Twitter</span></a></div>
+        </div>
+    </section>
+    <footer>
+        <h1>Footer Information and Links</h1>
+    </footer>
+</body>
+</html>
