@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eee;
+    color: #111;
+  }
+  
+  .draggable-elements {
+    display: flex;
+    justify-content: center;
+  }
+  .draggable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: opacity 0.2s;
+  }
+  .draggable:hover {
+    opacity: 0.5;
+  }
+  .dragging {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+  .droppable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px dashed #111;
+    transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+  }
+  .droppable span {
+    font-size: 1.25rem;
+    pointer-events: none; /* The element is never the target of pointer events */
+  }
+  
+  /* Drag and Drop Related Styling */
+  
+  .droppable.droppable-hover {
+    /* background-color: #bee3f0; */
+    border-width: 5px;
+    transform: scale(1.1);
+  }
+  .droppable.dropped {
+    
+  }
+  .droppable.dropped span {
+    margin-top: 0.5rem;
+  }
+  .droppable.dropped i {
+    pointer-events: none;
+  }
+  .draggable.dragged {
+    display: none;
+  }
+  .draggable.dragged:hover {
+    opacity: 0.1;
+  }
+  
+  @media (max-width: 600px) {
+    html { font-size: 14px; }
+    .draggable-elements { margin: 1.5rem; }
+  }
+  #periodic-table {
+      position: absolute;
+      width: 1200px;
+      margin-top: 20px;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+  }
+  .row {
+      display: flex;
+      text-align: center;
+      height: 70px;
+      justify-content: center;
+  }
+  .cell {
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      color: black;
+      box-sizing: border-box;
+      border-radius: 3px;
+      margin: 1px;
+      text-decoration: none;
+  }
+      .cell span {
+          height: 68px;
+          width:58px;
+          padding-top:20px;
+      }
+      #tile-dispenser {
+          position: absolute;
+          top: 10px;
+          left: 300px;
+          width: 120px;
+          height: 180px;
+          overflow: hidden;
+          background-image:url('img/diagonal-lines.jpg');
+          background-size: contain;
+      }
+      #tile-dispenser .dragmesign {
+          width: 121px;
+          height: 30px;
+          background-color:darkgreen;
+          color: #CBECFB;
+          text-align: center;
+          line-height: 30px;
+      }
+      #mistake-counter {
+          position: absolute;
+          top: 10px;
+          left: 450px;
+          width: 120px;
+          height: 180px;
+          color: darkgreen;
+          font-size: 18px;
+      }
+      .tile {
+          background:linear-gradient(rgba(124, 195, 30, 0.8), rgba(0,89,43, 0.8)), url('img/diagonal-lines.jpg');
+          width:100px;
+          height: 130px;
+          padding-top:40px;
+          margin: 10px;
+          font-size: 14px;
+          display: inline-block;
+          text-align: center;
+          text-transform: capitalize;
+          color: #fff;
+      }
+      .tile span {
+          line-height: 60px
+      }
+      
+      /* Diatomic Nonmetal Elements  */
+      .Hydrogen{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      .Nitrogen{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      .Oxygen{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      .Fluorine{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      .Chlorine{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      .Bromine{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      .Iodine{
+          background-color: #FDC7FE;
+          border:solid 1px #FDC7FE;
+      }
+      
+      /* Noble Gases */
+      .Helium {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      .Neon {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      .Argon {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      .Krypton {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      .Xenon {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      .Radon {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      .Oganesson {
+          background-color: #CBECFB;
+          border:solid 1px #CBECFB;
+      }
+      
+      /* Metalloids */
+      .Boron {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Silicon {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Germanium {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Arsenic {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Antimony {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Tellurium {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Astatine {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+      .Tennessine {
+          background-color: #AFFFB5;
+          border:solid 1px #AFFFB5;
+      }
+  
+      /* Polyatomic Nonmetal */
+      .Carbon {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Phosphorus {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Sulfur {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Selenium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+  
+      /* Alkali Metal */
+      .Lithium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Sodium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Potassium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Rubidium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Caesium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+      .Francium {
+          background-color: #D0C1FF;
+          border:solid 1px #D0C1FF;
+      }
+  
+      /* Alkaline Earth Metal */
+      .Beryllium {
+          background-color: #FFE5AA;
+          border:solid 1px #FFE5AA;
+      }
+      .Magnesium {
+          background-color: #FFE5AA;
+          border:solid 1px #FFE5AA;
+      }
+      .Calcium {
+          background-color: #FFE5AA;
+          border:solid 1px #FFE5AA;
+      }
+      .Strontium {
+          background-color: #FFE5AA;
+          border:solid 1px #FFE5AA;
+      }
+      .Barium {
+          background-color: #FFE5AA;
+          border:solid 1px #FFE5AA;
+      }
+      .Radium {
+          background-color: #FFE5AA;
+          border:solid 1px #FFE5AA;
+      }
+      
+      /* Post-Transition Metal */
+      .Aluminum {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Gallium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Indium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Tin {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Thallium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Lead {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Bismuth {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Polonium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Flerovium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Nihonium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Moscovium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+      .Livermorium {
+          background-color: #FFFAA9;
+          border:solid 1px #FFFAA9;
+      }
+  
+      /* Transition Metal */
+      .Scandium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Titanium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Vanadium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Chromium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Manganese {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Iron {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Cobalt {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Nickel {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Copper {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Zinc {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Yttrium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Zirconium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Niobium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Molybdenum {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Technetium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Ruthenium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Rhodium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Palladium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Silver {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Cadmium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Hafnium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Tantalum {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Tungsten {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Rhenium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Osmium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Iridium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Platinum {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Gold {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Mercury {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Rutherfordium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Dubnium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Seaborgium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Bohrium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Hassium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Meitnerium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Darmstadtium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Roentgenium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+      .Copernicium {
+          background-color: #F0FEAB;
+          border:solid 1px #F0FEAB;
+      }
+  
+     /* Lanthanides */
+     .Lanthanum {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Cerium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Praseodymium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Neodymium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Promethium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Samarium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Europium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Gadolinium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Terbium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Dysprosium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Holmium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Erbium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Thulium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+    .Ytterbium {
+        background-color: #DDFDAA;
+        border:solid 1px #DDFDAA;
+    }
+
+     /* Actinides */
+    .Actinium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Thorium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Protactinium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Uranium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Neptunium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Plutonium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Americium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Curium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Berkelium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Californium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Einsteinum {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Fermium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Mendelevium {
+        background-color: #CAFEA9;
+        border:solid 1px #CAFEA9;
+    }
+    .Nobelum {
+        background-color: #CAFEA9;
+        border:solid 1px #DDFDAA;
+    }
+      
+
+  .droppable.dropped span {
+      line-height: 0;
+  }
+      .merged {
+          font-size:9px;
+      }
+  .popup {
+      display: block;
+  }
+  .popup .overlay {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vw;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+  }
+  .popup .popupcontent {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background-image:url('img/dragme.png');
+      z-index: 2;
+  }
+  .letsplay {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      width: 301px;
+      height: 103px;
+      margin-left: -150px;
+      background-image: url('img/letsplay.png');
+      cursor: pointer;
+  }
+  .letsplay:hover {
+      background-image: url('img/letsplay-hover.png');
+  }
+  #legend {
+      position: absolute;
+      bottom: 40px;
+      left:90px;
+      color: #F0FEAB;
+  }
+  .hide {
+      display: none;
+  }

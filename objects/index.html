@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <strong>Profile</strong>
+    <strong id="name"></strong>
+    <strong class="last"></strong>
+    <ul class="skills"></ul>
+    <script>
+    var profile = {
+        "Name" : "Alberto",
+        "Last" : "Arriola",
+        "Skills" : ["HTML 5", "CSS 3", "JavaScript", "Python"]
+    };
+
+    var list = document.getElementById("#skills"); 
+    var skillItems = ""
+    for (i in profile.Skills) {
+        skillItems += profile.Skills[i];
+    }
+    list.insertAdjacentHTML(skillItems);
+    </script>
+
+</body>
+</html>

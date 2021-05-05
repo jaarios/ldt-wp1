@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DrAgMe - An elementary game by Alberto Arriola</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Popup Start game  -->
+<div class="popup" id="startgame">
+	<div class="overlay"></div>
+	<div class="popupcontent">
+		<div class="letsplay" onclick="startGame()"></div>
+		<p id="legend">Game by J Alberto Arriola for the Course EME6930</p>
+	</div>
+</div>
+<!-- Table Grid with droppable elements  -->
+<div id="periodic-table">
+	<div class="row">
+		<div data-draggable-id ="Hydrogen" class="cell droppable"><span>H</span></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Helium" class="cell droppable"><span>He</span></div>
+	</div>
+
+	<div class="row">
+		<div data-draggable-id ="Lithium" class="cell droppable"><span>Li</span></div>
+		<div data-draggable-id ="Beryllium" class="cell droppable"><span>Be</span></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Boron" class="cell droppable"><span>B</span></div>
+		<div data-draggable-id ="Carbon" class="cell droppable"><span>C</span></div>
+		<div data-draggable-id ="Nitrogen" class="cell droppable"><span>N</span></div>
+		<div data-draggable-id ="Oxygen" class="cell droppable"><span>O</span></div>
+		<div data-draggable-id ="Fluorine" class="cell droppable"><span>F</span></div>
+		<div data-draggable-id ="Neon" class="cell droppable"><span>Ne</span></div>
+	</div>
+	
+	<div class="row">
+		<div data-draggable-id ="Sodium" class="cell droppable"><span>Na</span></div>
+		<div data-draggable-id ="Magnesium" class="cell droppable"><span>Mg</span></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Aluminum" class="cell droppable"><span>Al</span></div>
+		<div data-draggable-id ="Silicon" class="cell droppable"><span>Si</span></div>
+		<div data-draggable-id ="Phosphorus" class="cell droppable"><span>P</span></div>
+		<div data-draggable-id ="Sulfur" class="cell droppable"><span>S</span></div>
+		<div data-draggable-id ="Chlorine" class="cell droppable"><span>Cl</span></div>
+		<div data-draggable-id ="Argon" class="cell droppable"><span>Ar</span></div>
+	</div>
+
+	<div class="row">
+		<div data-draggable-id ="Potassium" class="cell droppable"><span>K</span></div>
+		<div data-draggable-id ="Calcium" class="cell droppable"><span>Ca</span></div>
+		<div data-draggable-id ="Scandium" class="cell droppable"><span>Sc</span></div>
+		<div data-draggable-id ="Titanium" class="cell droppable"><span>Ti</span></div>
+		<div data-draggable-id ="Vanadium" class="cell droppable"><span>V</span></div>
+		<div data-draggable-id ="Chromium" class="cell droppable"><span>Cr</span></div>
+		<div data-draggable-id ="Manganese" class="cell droppable"><span>Mn</span></div>
+		<div data-draggable-id ="Iron" class="cell droppable"><span>Fe</span></div>
+		<div data-draggable-id ="Cobalt" class="cell droppable"><span>Co</span></div>
+		<div data-draggable-id ="Nickel" class="cell droppable"><span>Ni</span></div>
+		<div data-draggable-id ="Copper" class="cell droppable"><span>Cu</span></div>
+		<div data-draggable-id ="Zinc" class="cell droppable"><span>Zn</span></div>
+		<div data-draggable-id ="Gallium" class="cell droppable"><span>Ga</span></div>
+		<div data-draggable-id ="Germanium" class="cell droppable"><span>Ge</span></div>
+		<div data-draggable-id ="Arsenic" class="cell droppable"><span>As</span></div>
+		<div data-draggable-id ="Selenium" class="cell droppable"><span>Se</span></div>
+		<div data-draggable-id ="Bromine" class="cell droppable"><span>Br</span></div>
+		<div data-draggable-id ="Krypton" class="cell droppable"><span>Kr</span></div>
+	</div>
+	
+	<div class="row">
+		<div data-draggable-id ="Rubidium" class="cell droppable"><span>Rb</span></div>
+		<div data-draggable-id ="Strontium" class="cell droppable"><span>Sr</span></div>
+		<div data-draggable-id ="Yttrium" class="cell droppable"><span>Y</span></div>
+		<div data-draggable-id ="Zirconium" class="cell droppable"><span>Zr</span></div>
+		<div data-draggable-id ="Niobium" class="cell droppable"><span>Nb</span></div>
+		<div data-draggable-id ="Molybdenum" class="cell droppable"><span>Mo</span></div>
+		<div data-draggable-id ="Technetium" class="cell droppable"><span>Tc</span></div>
+		<div data-draggable-id ="Ruthenium" class="cell droppable"><span>Ru</span></div>
+		<div data-draggable-id ="Rhodium" class="cell droppable"><span>Rh</span></div>
+		<div data-draggable-id ="Palladium" class="cell droppable"><span>Pd</span></div>
+		<div data-draggable-id ="Silver" class="cell droppable"><span>Ag</span></div>
+		<div data-draggable-id ="Cadmium" class="cell droppable"><span>Cd</span></div>
+		<div data-draggable-id ="Indium" class="cell droppable"><span>In</span></div>
+		<div data-draggable-id ="Tin" class="cell droppable"><span>Sn</span></div>
+		<div data-draggable-id ="Antimony" class="cell droppable"><span>Sb</span></div>
+		<div data-draggable-id ="Tellurium" class="cell droppable"><span>Te</span></div>
+		<div data-draggable-id ="Iodine" class="cell droppable"><span>I</span></div>
+		<div data-draggable-id ="Xenon" class="cell droppable"><span>Xe</span></div>
+	</div>
+
+	<div class="row">
+		<div data-draggable-id ="Caesium" class="cell droppable"><span>Cs</span></div>
+		<div data-draggable-id ="Barium" class="cell droppable"><span>Ba</span></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Hafnium" class="cell droppable"><span>Hf</span></div>
+		<div data-draggable-id ="Tantalum" class="cell droppable"><span>Ta</span></div>
+		<div data-draggable-id ="Tungsten" class="cell droppable"><span>W</span></div>
+		<div data-draggable-id ="Rhenium" class="cell droppable"><span>Re</span></div>
+		<div data-draggable-id ="Osmium" class="cell droppable"><span>Os</span></div>
+		<div data-draggable-id ="Iridium" class="cell droppable"><span>Ir</span></div>
+		<div data-draggable-id ="Platinum" class="cell droppable"><span>Pt</span></div>
+		<div data-draggable-id ="Gold" class="cell droppable"><span>Au</span></div>
+		<div data-draggable-id ="Mercury" class="cell droppable"><span>Hg</span></div>
+		<div data-draggable-id ="Thallium" class="cell droppable"><span>Tl</span></div>
+		<div data-draggable-id ="Lead" class="cell droppable"><span>Pb</span></div>
+		<div data-draggable-id ="Bismuth" class="cell droppable"><span>Bi</span></div>
+		<div data-draggable-id ="Polonium" class="cell droppable"><span>Po</span></div>
+		<div data-draggable-id ="Astatine" class="cell droppable"><span>At</span></div>
+		<div data-draggable-id ="Radon" class="cell droppable"><span>Rn</span></div>
+	</div>
+	
+	<div class="row">
+		<div data-draggable-id ="Francium" class="cell droppable"><span>Fr</span></div>
+		<div data-draggable-id ="Radium" class="cell droppable"><span>Ra</span></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Rutherfordium" class="cell droppable"><span>Rf</span></div>
+		<div data-draggable-id ="Dubnium" class="cell droppable"><span>Db</span></div>
+		<div data-draggable-id ="Seaborgium" class="cell droppable"><span>Sg</span></div>
+		<div data-draggable-id ="Bohrium" class="cell droppable"><span>Bh</span></div>
+		<div data-draggable-id ="Hassium" class="cell droppable"><span>Hs</span></div>
+		<div data-draggable-id ="Meitnerium" class="cell droppable"><span>Mt</span></div>
+		<div data-draggable-id ="Darmstadtium" class="cell droppable"><span>Ds</span></div>
+		<div data-draggable-id ="Roentgenium" class="cell droppable"><span>Rg</span></div>
+		<div data-draggable-id ="Copernicium" class="cell droppable"><span>Cn</span></div>
+		<div data-draggable-id ="Nihonium" class="cell droppable"><span>Nh</span></div>
+		<div data-draggable-id ="Flerovium" class="cell droppable"><span>Fl</span></div>
+		<div data-draggable-id ="Moscovium" class="cell droppable"><span>Mc</span></div>
+		<div data-draggable-id ="Livermorium" class="cell droppable"><span>Lv</span></div>
+		<div data-draggable-id ="Tennessine" class="cell droppable"><span>Ts</span></div>
+		<div data-draggable-id ="Oganesson" class="cell droppable"><span>Og</span></div>
+	</div>
+
+	<div class="row" style="margin-top: 20px;">
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Lanthanum" class="cell droppable"><span>La</span></div>
+		<div data-draggable-id ="Cerium" class="cell droppable"><span>Ce</span></div>
+		<div data-draggable-id ="Praseodymium" class="cell droppable"><span>Pr</span></div>
+		<div data-draggable-id ="Neodymium" class="cell droppable"><span>Nd</span></div>
+		<div data-draggable-id ="Promethium" class="cell droppable"><span>Pm</span></div>
+		<div data-draggable-id ="Samarium" class="cell droppable"><span>Sm</span></div>
+		<div data-draggable-id ="Europium" class="cell droppable"><span>Eu</span></div>
+		<div data-draggable-id ="Gadolinium" class="cell droppable"><span>Gd</span></div>
+		<div data-draggable-id ="Terbium" class="cell droppable"><span>Tb</span></div>
+		<div data-draggable-id ="Dysprosium" class="cell droppable"><span>Dy</span></div>
+		<div data-draggable-id ="Holmium" class="cell droppable"><span>Ho</span></div>
+		<div data-draggable-id ="Erbium" class="cell droppable"><span>Er</span></div>
+		<div data-draggable-id ="Thulium" class="cell droppable"><span>Tm</span></div>
+		<div data-draggable-id ="Ytterbium" class="cell droppable"><span>Yb</span></div>
+		<div class="cell"></div>
+	</div>
+
+	<div class="row">
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div data-draggable-id ="Actinium" class="cell droppable"><span>Ac</span></div>
+		<div data-draggable-id ="Thorium" class="cell droppable"><span>Th</span></div>
+		<div data-draggable-id ="Protactinium" class="cell droppable"><span>Pa</span></div>
+		<div data-draggable-id ="Uranium" class="cell droppable"><span>U</span></div>
+		<div data-draggable-id ="Neptunium" class="cell droppable"><span>Np</span></div>
+		<div data-draggable-id ="Plutonium" class="cell droppable"><span>Pu</span></div>
+		<div data-draggable-id ="Americium" class="cell droppable"><span>Am</span></div>
+		<div data-draggable-id ="Curium" class="cell droppable"><span>Cm</span></div>
+		<div data-draggable-id ="Berkelium" class="cell droppable"><span>Bk</span></div>
+		<div data-draggable-id ="Californium" class="cell droppable"><span>Cf</span></div>
+		<div data-draggable-id ="Einsteinum" class="cell droppable"><span>Es</span></div>
+		<div data-draggable-id ="Fermium" class="cell droppable"><span>Fm</span></div>
+		<div data-draggable-id ="Mendelevium" class="cell droppable"><span>Md</span></div>
+		<div data-draggable-id ="Nobelum" class="cell droppable"><span>No</span></div>
+		<div class="cell"></div>
+	</div>
+
+
+	<!-- Dragable elements  -->
+	<div id="tile-dispenser">
+			<div class="dragmesign">Drag me!</div>
+			
+	</div>
+	<div id="mistake-counter">
+		You have <b><span id="mistakes">0</span></b> mistakes
+	</div>
+</div>
+	<script src="scripts/dd-script.js"></script>
+</body>
+</html>
