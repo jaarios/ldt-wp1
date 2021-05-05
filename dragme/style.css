@@ -76,7 +76,7 @@
       margin-top: 20px;
       left: 50%;
       top: 40%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -40%);
   }
   .row {
       display: flex;
@@ -145,485 +145,61 @@
       }
       
       /* Diatomic Nonmetal Elements  */
-      .Hydrogen{
-          background-color: #FDC7FE;
-          border:solid 1px #FDC7FE;
-      }
-      .Nitrogen{
-          background-color: #FDC7FE;
-          border:solid 1px #FDC7FE;
-      }
-      .Oxygen{
-          background-color: #FDC7FE;
-          border:solid 1px #FDC7FE;
-      }
-      .Fluorine{
-          background-color: #FDC7FE;
-          border:solid 1px #FDC7FE;
-      }
-      .Chlorine{
-          background-color: #FDC7FE;
-          border:solid 1px #FDC7FE;
-      }
-      .Bromine{
-          background-color: #FDC7FE;
-          border:solid 1px #FDC7FE;
-      }
-      .Iodine{
+      .Hydrogen, .Nitrogen, .Oxygen, .Fluorine, .Chlorine, .Bromine, .Iodine{
           background-color: #FDC7FE;
           border:solid 1px #FDC7FE;
       }
       
       /* Noble Gases */
-      .Helium {
-          background-color: #CBECFB;
-          border:solid 1px #CBECFB;
-      }
-      .Neon {
-          background-color: #CBECFB;
-          border:solid 1px #CBECFB;
-      }
-      .Argon {
-          background-color: #CBECFB;
-          border:solid 1px #CBECFB;
-      }
-      .Krypton {
-          background-color: #CBECFB;
-          border:solid 1px #CBECFB;
-      }
-      .Xenon {
-          background-color: #CBECFB;
-          border:solid 1px #CBECFB;
-      }
-      .Radon {
-          background-color: #CBECFB;
-          border:solid 1px #CBECFB;
-      }
-      .Oganesson {
+      .Helium, .Neon, .Argon, .Krypton, .Xenon, .Radon, .Oganesson {
           background-color: #CBECFB;
           border:solid 1px #CBECFB;
       }
       
       /* Metalloids */
-      .Boron {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Silicon {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Germanium {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Arsenic {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Antimony {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Tellurium {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Astatine {
-          background-color: #AFFFB5;
-          border:solid 1px #AFFFB5;
-      }
-      .Tennessine {
+      .Boron, .Silicon, .Germanium, .Arsenic, .Antimony, .Tellurium, .Astatine, .Tennessine {
           background-color: #AFFFB5;
           border:solid 1px #AFFFB5;
       }
   
       /* Polyatomic Nonmetal */
-      .Carbon {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Phosphorus {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Sulfur {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Selenium {
+      .Carbon, .Phosphorus, .Sulfur, .Selenium {
           background-color: #D0C1FF;
           border:solid 1px #D0C1FF;
       }
   
       /* Alkali Metal */
-      .Lithium {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Sodium {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Potassium {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Rubidium {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Caesium {
-          background-color: #D0C1FF;
-          border:solid 1px #D0C1FF;
-      }
-      .Francium {
+      .Lithium, .Sodium, .Potassium, .Rubidium, .Caesium, .Francium {
           background-color: #D0C1FF;
           border:solid 1px #D0C1FF;
       }
   
       /* Alkaline Earth Metal */
-      .Beryllium {
-          background-color: #FFE5AA;
-          border:solid 1px #FFE5AA;
-      }
-      .Magnesium {
-          background-color: #FFE5AA;
-          border:solid 1px #FFE5AA;
-      }
-      .Calcium {
-          background-color: #FFE5AA;
-          border:solid 1px #FFE5AA;
-      }
-      .Strontium {
-          background-color: #FFE5AA;
-          border:solid 1px #FFE5AA;
-      }
-      .Barium {
-          background-color: #FFE5AA;
-          border:solid 1px #FFE5AA;
-      }
-      .Radium {
+      .Beryllium, .Magnesium, .Calcium, .Strontium, .Barium, .Radium {
           background-color: #FFE5AA;
           border:solid 1px #FFE5AA;
       }
       
       /* Post-Transition Metal */
-      .Aluminum {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Gallium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Indium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Tin {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Thallium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Lead {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Bismuth {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Polonium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Flerovium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Nihonium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Moscovium {
-          background-color: #FFFAA9;
-          border:solid 1px #FFFAA9;
-      }
-      .Livermorium {
+      .Aluminum, .Gallium, .Indium, .Tin, .Thallium, .Lead, .Bismuth, .Polonium, .Flerovium, .Nihonium, .Moscovium, .Livermorium {
           background-color: #FFFAA9;
           border:solid 1px #FFFAA9;
       }
   
       /* Transition Metal */
-      .Scandium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Titanium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Vanadium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Chromium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Manganese {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Iron {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Cobalt {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Nickel {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Copper {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Zinc {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Yttrium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Zirconium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Niobium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Molybdenum {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Technetium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Ruthenium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Rhodium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Palladium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Silver {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Cadmium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Hafnium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Tantalum {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Tungsten {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Rhenium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Osmium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Iridium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Platinum {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Gold {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Mercury {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Rutherfordium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Dubnium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Seaborgium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Bohrium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Hassium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Meitnerium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Darmstadtium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Roentgenium {
-          background-color: #F0FEAB;
-          border:solid 1px #F0FEAB;
-      }
-      .Copernicium {
+      .Scandium, .Titanium, .Vanadium, .Chromium, .Manganese, .Iron, .Cobalt, .Nickel, .Copper, .Zinc, .Yttrium, .Zirconium, .Niobium, .Molybdenum, .Technetium, .Ruthenium, .Rhodium, .Palladium, .Silver, .Cadmium, .Hafnium, .Tantalum, .Tungsten, .Rhenium, .Osmium, .Iridium, .Platinum, .Gold, .Mercury, .Rutherfordium, .Dubnium, .Seaborgium, .Bohrium, .Hassium, .Meitnerium, .Darmstadtium, .Roentgenium, .Copernicium {
           background-color: #F0FEAB;
           border:solid 1px #F0FEAB;
       }
   
      /* Lanthanides */
-     .Lanthanum {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Cerium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Praseodymium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Neodymium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Promethium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Samarium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Europium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Gadolinium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Terbium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Dysprosium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Holmium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Erbium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Thulium {
-        background-color: #DDFDAA;
-        border:solid 1px #DDFDAA;
-    }
-    .Ytterbium {
+     .Lanthanum, .Cerium, .Praseodymium, .Neodymium, .Promethium, .Samarium, .Europium, .Gadolinium, .Terbium, .Dysprosium, .Holmium, .Erbium, .Thulium, .Ytterbium {
         background-color: #DDFDAA;
         border:solid 1px #DDFDAA;
     }
 
      /* Actinides */
-    .Actinium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Thorium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Protactinium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Uranium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Neptunium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Plutonium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Americium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Curium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Berkelium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Californium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Einsteinum {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Fermium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Mendelevium {
-        background-color: #CAFEA9;
-        border:solid 1px #CAFEA9;
-    }
-    .Nobelum {
+    .Actinium, .Thorium, .Protactinium, .Uranium, .Neptunium, .Plutonium, .Americium, .Curium, .Berkelium, .Californium, .Einsteinum, .Fermium, .Mendelevium, .Nobelum {
         background-color: #CAFEA9;
         border:solid 1px #DDFDAA;
     }
